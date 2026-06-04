@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pond Boys | Professional Pressure Washing Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: #85c1e9;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #85c1e9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 82, 118, 0.85), rgba(41, 128, 185, 0.85)),
+                        url('[images.unsplash.com](https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920)') center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #85c1e9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        .cta-button:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1a5276;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #1a5276;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            color: #666;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+            color: white;
+        }
+
+        .why-us .section-title {
+            color: white;
+        }
+
+        .why-us .section-subtitle {
+            color: #85c1e9;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .benefit-item p {
+            color: #b3d9f2;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 1.2rem 3rem;
+            font-size: 1.3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+            margin-top: 1.5rem;
+        }
+
+        .contact-button:hover {
+            background: #219a52;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.5);
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            color: #666;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a5276;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #85c1e9;
+            text-decoration: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                💧 POND<span>BOYS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Professional Pressure Washing</h1>
+            <p class="tagline">Better Quality. Affordable Prices.</p>
+            <p>Transform your property with our expert pressure washing services. From driveways to decks, we make everything look brand new.</p>
+            <a href="mailto:pondboyswashing@gmail.com?subject=Estimate%20Request" class="cta-button">Get a Free Estimate</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">We pressure wash it all—restoring your property's curb appeal</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>House Siding</h3>
+                <p>Remove years of dirt, mold, and grime from your home's exterior. Safe for vinyl, wood, brick, and more.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🚗</div>
+                <h3>Driveways</h3>
+                <p>Eliminate oil stains, tire marks, and built-up dirt. Make your driveway look like new again.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🪵</div>
+                <h3>Decks</h3>
+                <p>Restore your deck's natural beauty. We remove algae, mildew, and weathered gray wood.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🌿</div>
+                <h3>Patios</h3>
+                <p>Bring life back to your outdoor living space. Perfect for concrete, pavers, and stone patios.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🚶</div>
+                <h3>Walkways</h3>
+                <p>Create a welcoming entrance with clean, bright walkways free of moss and stains.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🏡</div>
+                <h3>Fences & Porches</h3>
+                <p>Refresh your fences and porches. We handle wood, vinyl, and composite materials.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us" id="why-us">
+        <h2 class="section-title">Why Choose Pond Boys?</h2>
+        <p class="section-subtitle">Quality service that won't break the bank</p>
+        
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="benefit-icon">💰</div>
+                <h3>Affordable Pricing</h3>
+                <p>Premium results without the premium price tag. We believe quality should be accessible.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">⭐</div>
+                <h3>Superior Quality</h3>
+                <p>We take pride in every job. Your satisfaction is our top priority.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">🛡️</div>
+                <h3>Safe & Professional</h3>
+                <p>Proper techniques to protect your surfaces while delivering outstanding results.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">📋</div>
+                <h3>Free Estimates</h3>
+                <p>No hidden fees or surprises. Get an honest quote before we start.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2 class="section-title">Ready for a Cleaner Property?</h2>
+            <p class="section-subtitle">Contact us today for a free, no-obligation estimate. We'll get back to you quickly!</p>
+            
+            <a href="mailto:pondboyswashing@gmail.com?subject=Estimate%20Request&body=Hi%20Pond%20Boys,%0A%0AI'm%20interested%20in%20getting%20an%20estimate%20for%20pressure%20washing%20services.%0A%0AService%20needed:%0AProperty%20address:%0APhone%20number:%0A%0AThank%20you!" class="contact-button">📧 Request an Estimate</a>
+            
+            <div class="contact-info">
+                <p><strong>Email:</strong> pondboyswashing@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>💧 Pond Boys Pressure Washing</strong></p>
+        <p>Better Quality. Affordable Prices.</p>
+        <p>&copy; 2025 Pond Boys. All rights reserved.</p>
+        <p><a href="mailto:pondboyswashing@gmail.com">pondboyswashing@gmail.com</a></p>
+    </footer>
+
+</body>
+</html>
